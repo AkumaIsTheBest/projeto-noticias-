@@ -10,12 +10,12 @@ async function loadEnv() {
       }
 
       const responseJson = await response.json();
-      console.log(responseJson)
-
+      const { API_KEY } =  responseJson
+      return API_KEY
 
     } catch (error) {
       console.error('Error loading .env file:', error);
     }
   }
 
-  loadEnv();
+  loadEnv()
