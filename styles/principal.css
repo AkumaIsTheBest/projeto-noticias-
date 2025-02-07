@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+.main_container {
+  background-color: #0E3659;
+  height: 100vh;
+  width: 100vw;
+}
+
+.filtro_principal {
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid #05DBF2;
+}
+
+.button_filtro_pesquisar {
+  border: 0;
+  width: 30%;
+  height: 40px;
+  background-color: #05DBF2;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.pesquisar_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 27px;
+  position: relative;
+  top: 3%;
+}
+
+.logo {
+  max-width: 40vw;
+  max-height: 40vh;
+}
+
+.input_container {
+  display: flex;
+  justify-content: center;
+  column-gap: 5%;
+  width: 90%;
+  margin: auto;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .input_container {
+    width: 70%;
+  }
+}
