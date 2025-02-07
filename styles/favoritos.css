@@ -1,0 +1,20 @@
+.body{
+    height: 844px;
+}
+
+.text_container {
+    padding: 16px 40px 0px 40px;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.text_title {
+    padding-bottom: 16px;
+}
+
+.text_fav {
+    display: grid;
+    place-items: center;
+    height: 672px;
+}
