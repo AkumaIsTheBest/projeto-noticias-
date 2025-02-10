@@ -3,6 +3,7 @@ html, body {
     height: 100dvh;
     width: 100vw;
     background-color: #0E3659;
+    color: white;
 }
 
 *{
@@ -44,7 +45,8 @@ html, body {
 
 .button_pesquisar {
     border: 0;
-    min-width: 192px;
+    padding: 0 8px;
+    min-width: fit-content;
     height: 48px;
     background-color: #05DBF2;
     color: #fff;
@@ -123,6 +125,9 @@ html, body {
     .main_container {
         margin-top: 16px;
         gap: 16px;
+    }
+    .button_pesquisar{
+        min-width: 192px;!important;
     }
     .separator{
         display: block;
