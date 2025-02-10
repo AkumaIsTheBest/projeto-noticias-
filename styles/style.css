@@ -1,9 +1,142 @@
 html, body {
     height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    background-color: #0E3659;
 }
 
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: "Inter";
+}
+
+.body_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 40px clamp(16px, calc(16px + (0.19 * (100vw - 420px))), 420px) 0;
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    order:-1;
+}
+
+.input_container {
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+    margin-top: 8px;
+    width: 100%;
+    height: fit-content;
+}
+
+.filtro_principal {
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+    border: 2px solid #05DBF2;
+}
+
+.button_pesquisar {
+    border: 0;
+    min-width: 192px;
+    height: 48px;
+    background-color: #05DBF2;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.separator{
+    display: none;
+}
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin-top: 8px;
+    overflow-x: visible;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.test_box{
+    width: 100%;
+    min-height: 192px;
+    height: 192px;
+    background-color: #05DBF2;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.navegation {
+    width: 100vw;
+    height: 48px;
+    background-color: #494EA6;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.estrela{
+    fill: #FFF
+}
+.fogo{
+    fill: #FFF
+}
+.casa{
+    fill: #FFF
+}
+
+.button_navegation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #494EA6;
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+@media (min-width: 1024px) {
+    .input_container{
+        margin-top: 16px;
+    }
+    .main_container {
+        margin-top: 16px;
+        gap: 16px;
+    }
+    .separator{
+        display: block;
+        margin-top: 16px;
+        width: 100%;
+        background-color: #FFF;
+        min-height: 3px;
+    }
+    .navegation{
+        width: 100%;
+        order:-1;
+        padding: 0;
+        margin-top: 16px;
+        justify-content: center;
+        gap: 16px;
+        background-color: #0E3659;
+    }
+    .button_navegation{
+        width: 192px;
+    }
 }
