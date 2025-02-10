@@ -100,6 +100,10 @@ html, body {
     fill: #FFF
 }
 
+.hidden{
+    display: none;
+}
+
 .button_navegation{
     display: flex;
     justify-content: center;
