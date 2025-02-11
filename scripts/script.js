@@ -38,6 +38,7 @@ function str2ab(str) {
       bufView[i] = str.charCodeAt(i);
   }
   return buf;
+}
 
   /**
    * Função para chamar a API
@@ -98,3 +99,27 @@ window.onload = function () {
   });
 }
 
+/**
+ * retorna se noticia já esta salva nos favoritos
+ * @param {string} hash 
+ * @returns {boolean}
+ */
+function isFavorito(hash){
+  if(localStorage.getItem(hash))return true
+  return false
+}
+
+/**
+ * Salva a noticia no local storage do browser
+ * @param {object} object 
+ * @returns 
+ */
+function salvarFavorito(object){
+  if(!object) return
+
+  const hash = generateHash(JSON.stringify(object))
+
+  if(isFavorito(hash))return
+
+  localStorage.setItem(hash, object)
+}
