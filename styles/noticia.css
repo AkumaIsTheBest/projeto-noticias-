@@ -1,0 +1,30 @@
+.imagem_noticia{
+    display: block;
+    padding-right: 8px;
+    height: 192px;
+    width: 192px;
+}
+.texto_noticia{
+    display: contents;
+}
+.container_fonte{
+    display: flex;
+    gap: 16px;
+}
+
+#noticia_link_fonte{
+    color: #22C1FB;
+    text-decoration: none;
+}
+
+@media (min-width:1024px) {
+    .logo{
+        display: block;
+    }
+    .texto_noticia{
+        display: revert;
+    }
+    .imagem_noticia{
+        float: left;
+    }
+}
