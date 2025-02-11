@@ -17,6 +17,8 @@ body {
 
 .noticia_img {
   grid-column: 1;
+  width: 128px;
+  height: 128px;
 }
 
 .card_text {
