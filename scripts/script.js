@@ -101,31 +101,19 @@ function getInfoFromApi(endpoint, params){
 }
 
 function getTopHeadlines() {
-  const termo_pesquisa = document.getElementById("filtro_principal").value;
 
-  if(termo_pesquisa == ''){
-    getInfoFromApi('top-headlines', { country: 'us' });
-    return;
-  }
-
-  getInfoFromApi('top-headlines', { country: 'us', q: termo_pesquisa });
+  getInfoFromApi('top-headlines', { country: 'us' });
+  
 
 }
 
 window.onload = function () {
   if(window.location.pathname == '/hot.html'){
     getTopHeadlines();
-
-    document.getElementById("pesquisar").addEventListener("click", getTopHeadlines());
-    document.getElementById("filtro_principal").addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        getTopHeadlines();
-      }
-    });
     return;
   }
   
-  document.getElementById("pesquisar").addEventListener("click", searchNews);
+  document.getElementById("pesquisar").addEventListener("click", searchNews());
   document.getElementById("filtro_principal").addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
       searchNews();
