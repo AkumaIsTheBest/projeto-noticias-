@@ -38,6 +38,7 @@ function str2ab(str) {
       bufView[i] = str.charCodeAt(i);
   }
   return buf;
+}
 
   /**
    * Função para chamar a API
