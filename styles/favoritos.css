@@ -17,12 +17,10 @@
 
 .text_title {
     padding-bottom: 16px;
-
     position: sticky;
     top: 0;
     width: 100%;
     background-color: #0E3659;
-
 }
 
 .text_fav {
