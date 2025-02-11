@@ -8,6 +8,11 @@
   background-color: #0E3659;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 8%;
+  overflow-x: hidden;
 }
 
 .filtro_principal {
@@ -36,6 +41,7 @@
   row-gap: 27px;
   position: relative;
   top: 3%;
+  width: 100%;
 }
 
 .logo {
@@ -50,6 +56,26 @@
   width: 90%;
   margin: auto;
   height: 100%;
+}
+
+#main_articles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  position: relative;
+  padding-bottom: 5%;
+}
+
+.estrela {
+  fill: #FFF
+}
+
+.fogo {
+  fill: #FFF
+}
+
+.casa {
+  fill: #FFF
 }
 
 @media (min-width: 768px) {
