@@ -102,8 +102,16 @@ html, body {
     fill: #FFF
 }
 
+.lixeira{
+    fill:#BE5656;
+}
+
 .hidden{
     display: none;
+}
+
+.gray{
+    fill: #d3d3d3;
 }
 
 .button_navegation{
