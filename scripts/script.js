@@ -39,6 +39,7 @@ function str2ab(str) {
   }
   return buf;
 }
+
   /**
    * Função para chamar a API
    * @param {string} endpoint 
@@ -68,7 +69,11 @@ function callApi(endpoint, params, callback) {
 function searchNews() {
   const termo_pesquisa = document.getElementById("filtro_principal").value;
 
-  callApi('everything', { q: termo_pesquisa }, (data) => {
+  getInfoFromApi('everything', { q: termo_pesquisa });
+}
+
+function getInfoFromApi(endpoint, params){
+  callApi(endpoint, params, (data) => {
     const main_content = document.querySelector('#main_articles');
 
     main_content.innerHTML = '';
@@ -91,7 +96,31 @@ function searchNews() {
   });
 }
 
+function getTopHeadlines() {
+  const termo_pesquisa = document.getElementById("filtro_principal").value;
+
+  if(termo_pesquisa == ''){
+    getInfoFromApi('top-headlines', { country: 'us' });
+    return;
+  }
+
+  getInfoFromApi('top-headlines', { country: 'us', q: termo_pesquisa });
+
+}
+
 window.onload = function () {
+  if(window.location.pathname == '/hot.html'){
+    getTopHeadlines();
+
+    document.getElementById("pesquisar").addEventListener("click", getTopHeadlines());
+    document.getElementById("filtro_principal").addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        getTopHeadlines();
+      }
+    });
+    return;
+  }
+  
   document.getElementById("pesquisar").addEventListener("click", searchNews);
   document.getElementById("filtro_principal").addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
