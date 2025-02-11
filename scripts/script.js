@@ -18,39 +18,24 @@ async function loadEnv() {
     }
   }
 
-
-
 /**
- * @typedef {'everything' | 'top-headlines'} endPoints
+ * Retorna a hash sha-1 da string dada
+ * @param {string} value Valor que deseja obter hash
  */
-const DEV = true
-const API_URL = 'https://newsapi.org/v2/'
-const API_KEY = loadEnv()
-const proxyUrl = "https://cors-anywhere.herokuapp.com/"
-const url = `${proxyUrl}https://newsapi.org/v2/everything?apiKey=${API_KEY}`;
-const request = new Request(url);
-/**
- *
- * @param {endPoints} path
- * @returns {Promise<{message: string}|any>}
- */
-const useApi = async (path) => {
-    DEV && console.log(API_URL + path);
-    const header = {Authorization: API_KEY}
+async function generateHash(value) {
+  var crypto = window.crypto;
+  var buffer = await str2ab(value);
+  var hash_bytes = await crypto.subtle.digest("SHA-1", buffer);
+  return [...new Uint8Array(hash_bytes)].map(x => x.toString(16).padStart(2, '0')).join('')
+}
 
-    try {
-        const response = await fetch(`${request}`);
-        const jsonResponse = await response.json();
+// https://stackoverflow.com/a/11058858
+function str2ab(str) {
+  const buf = new ArrayBuffer(str.length);
+  const bufView = new Uint8Array(buf);
+  for (let i = 0, strLen = str.length; i < strLen; i++) {
+      bufView[i] = str.charCodeAt(i);
+  }
+  return buf;
+}
 
-        if (response.ok) {
-            return jsonResponse;
-        } else {
-            throw new Error(jsonResponse.message || 'Something went wrong');
-        }
-    } catch (err) {
-        console.error(err);
-        return { message:'Não foi possível se conectar com o servidor, tente novamente' }
-    }
-};
-
-console.log(useApi());
