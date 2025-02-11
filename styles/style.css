@@ -117,6 +117,22 @@ html, body {
     border-radius: 10px;
 }
 
+.text_title {
+    padding-bottom: 16px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #0E3659;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: normal;
+}
+
+.ativo {
+    fill: #05DBF2 !important;        
+}
 
 @media (min-width: 1024px) {
     .input_container{
